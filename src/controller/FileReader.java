@@ -1,4 +1,4 @@
-package code;
+package controller;
 
 import java.io.File;
 import java.util.Scanner;

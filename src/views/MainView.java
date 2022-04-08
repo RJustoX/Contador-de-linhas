@@ -1,16 +1,19 @@
-package code;
+package views;
 
 import java.util.ArrayList;
+import model.Data;
 
 
 public class MainView extends javax.swing.JFrame {
  
+    public static ArrayList<Data> list = new ArrayList<>();
+    public static  ArrayList<String> extensions =new ArrayList<>();
  
     public MainView() {
         initComponents(); 
         setResizable(false);
         setLocationRelativeTo(null);
-        
+     
     }
 
     @SuppressWarnings("unchecked")
@@ -22,6 +25,7 @@ public class MainView extends javax.swing.JFrame {
         btnGetFile = new javax.swing.JButton();
         btnGetDirectory = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
+        btnsetExt = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -57,25 +61,37 @@ public class MainView extends javax.swing.JFrame {
             }
         });
 
+        btnsetExt.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnsetExt.setText("Adicionar extensão");
+        btnsetExt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnsetExt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsetExtActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(84, 84, 84)
+                .addGap(92, 92, 92)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnsetExt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnGetFile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnGetDirectory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnExit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(100, Short.MAX_VALUE))
+                    .addComponent(btnGetDirectory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(130, 130, 130)
+                .addGap(76, 76, 76)
                 .addComponent(btnGetFile, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnGetDirectory, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnsetExt, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -126,6 +142,10 @@ public class MainView extends javax.swing.JFrame {
          new SelectFileView().setVisible(true);
     }//GEN-LAST:event_btnGetFileActionPerformed
 
+    private void btnsetExtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsetExtActionPerformed
+        new Cadastro(this, true).setVisible(true);
+    }//GEN-LAST:event_btnsetExtActionPerformed
+
       public static void main(String args[]) {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
@@ -138,6 +158,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnGetDirectory;
     private javax.swing.JButton btnGetFile;
+    private javax.swing.JButton btnsetExt;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
